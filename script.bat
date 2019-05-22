@@ -1,26 +1,44 @@
 @ECHO off
-for %%f in (*.*) do (
-	for /L %%i IN (0,1,7) DO (
-		set archivo=%%f&call :renombrara&call :renombrare&call :renombrari&call :renombraro&call :renombraru&call :renombrarn
-	)
-	)
-)
+call :renombrarA
+call :renombrarE
+call :renombrarI
+call :renombrarO
+call :renombrarU
+call :renombrarN
 pause
-:renombrara
-set quitar=%archivo: =a%
-rename "%archivo%" "%quitar%"
-:renombrare
-set quitar=%archivo:‚=e%
-rename "%archivo%" "%quitar%"
-:renombrari
-set quitar=%archivo:¡=i%
-rename "%archivo%" "%quitar%"
-:renombraro
-set quitar=%archivo:¢=o%
-rename "%archivo%" "%quitar%"
-:renombraru
-set quitar=%archivo:£=u%
-rename "%archivo%" "%quitar%"
-:renombrarn
-set quitar=%archivo:¤=n%
-rename "%archivo%" "%quitar%"
+:renombrarA
+for %%f in (*.*) do (
+	set archivo=%%f
+	set quitar=%archivo: =a%
+	rename "%archivo%" "%quitar%"
+)
+:renombrarE
+for %%f in (*.*) do (
+	set archivo=%%f
+	set quitar=%archivo:‚=e%
+	rename "%archivo%" "%quitar%"
+)
+:renombrarI
+for %%f in (*.*) do (
+	set archivo=%%f
+	set quitar=%archivo:¡=i%
+	rename "%archivo%" "%quitar%"
+)
+:renombrarO
+for %%f in (*.*) do (
+	set archivo=%%f
+	set quitar=%archivo:¢=o%
+	rename "%archivo%" "%quitar%"
+)
+:renombrarU
+for %%f in (*.*) do (
+	set archivo=%%f
+	set quitar=%archivo:£=u%
+	rename "%archivo%" "%quitar%"
+)
+:renombrarN
+for %%f in (*.*) do (
+	set archivo=%%f
+	set quitar=%archivo:¤=n%
+	rename "%archivo%" "%quitar%"
+)
